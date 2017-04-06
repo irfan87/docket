@@ -6,5 +6,4 @@ class Customer < ApplicationRecord
 	validates_presence_of :cust_postcode
 	validates_presence_of :cust_state
 	validates_presence_of :cust_phone
-	validates_numericality_of :cust_phone
 end

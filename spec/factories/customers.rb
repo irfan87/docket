@@ -1,9 +1,10 @@
 FactoryGirl.define do
   factory :customer do
-    cust_name "MyString"
-    cust_address "MyText"
-    cust_state ""
-    cust_state "MyString"
-    cust_phone "MyString"
+  	association :store
+    cust_name {FFaker::Name.first_name}
+    cust_address {FFaker::AddressUK.street_name}
+    cust_postcode {FFaker::AddressUK.postcode}
+    cust_state {FFaker::AddressUS.us_state}
+    cust_phone {FFaker::PhoneNumber.phone_number}
   end
 end

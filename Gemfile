@@ -57,7 +57,7 @@ group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'faker' #some older RubySnacks reference 'ffaker'
+  gem 'ffaker' #some older RubySnacks reference 'ffaker'
   gem 'selenium-webdriver'
   gem 'simple_bdd'
   gem 'shoulda-matchers'
