@@ -41,26 +41,26 @@ RSpec.describe Store, type: :model do
 	end
 
 	it "should be invalid if have same name" do
-		create(:store, store_name: 'Test Store', store_address: 'KLCC', store_postcode: 12345, store_state: 'Kuala Lumpur', store_phone: '0123456789')
-		store = build(:store, store_name: 'Test Store', store_address: 'Bandar Melaka', store_postcode: 12346, store_state: 'Melaka', store_phone: '0123456780')
+		create(:store, store_name: 'Test Store')
+		store = build(:store, store_name: 'Test Store')
 
 		store.valid?
 		expect(store.errors[:store_name]).to include("has already been taken")
 	end
 
-	# describe "validate store phone number" do
-	# 	context "with valid store phone number" do
-	# 		it "should be valid if store phone number is an integer" do
-	# 			store = create(:store, store_name: 'Test Store', store_address: 'KLCC', store_postcode: 12345, store_state: 'Kuala Lumpur', store_phone: '0123456789')
-	# 			expect(store.store_phone).to eq('0123456789')
-	# 		end
-	# 	end
+	describe "validate store phone number" do
+		context "with valid store phone number" do
+			it "should be valid if store phone number is an integer" do
+				store = create(:store, store_name: 'Test Store', store_address: 'KLCC', store_postcode: 12345, store_state: 'Kuala Lumpur', store_phone: '0123456789')
+				expect(store.store_phone).to eq('0123456789')
+			end
+		end
 
-	# 	context "with invalid store phone number" do
-	# 		it "should be invalid if store phone number is not an integer" do
-	# 			store = build(:store, store_name: 'Test Store', store_address: 'KLCC', store_postcode: 12345, store_state: 'Kuala Lumpur', store_phone: '012345abcd')
-	# 			expect(store.store_phone).not_to eq('0123456789')
-	# 		end
-	# 	end
-	# end
+		context "with invalid store phone number" do
+			it "should be invalid if store phone number is not an integer" do
+				store = build(:store, store_name: 'Test Store', store_address: 'KLCC', store_postcode: 12345, store_state: 'Kuala Lumpur', store_phone: '012345abcd')
+				expect(store.store_phone).not_to eq('0123456789')
+			end
+		end
+	end
 end
