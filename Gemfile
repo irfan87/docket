@@ -40,6 +40,7 @@ group :development, :test do
   gem 'pry-nav'
   gem 'pry-rails', '~> 0.3.2'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   #other option comes with Rails -- gem 'byebug', platform: :mri
 end
 
