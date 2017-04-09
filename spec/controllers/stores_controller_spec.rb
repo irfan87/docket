@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe StoresController, type: :controller do
   let(:invalid_attributes) {
-    FactoryGirl.attributes_for(:store, store_name: nil, store_address: nil, store_postcode: nil, store_state: nil, store_phone: nil)
+    attributes_for(:store, store_name: nil, store_address: nil, store_postcode: nil, store_state: nil, store_phone: nil)
   }
 
   let(:valid_attributes) {
-    FactoryGirl.attributes_for(:store)
+    attributes_for(:store)
   }
 
   describe "GET #show" do
@@ -92,7 +92,7 @@ RSpec.describe StoresController, type: :controller do
 
   describe "PUT #update" do
     let(:new_attributes) {
-      FactoryGirl.attributes_for(:store, store_name: "test store", store_address: "kota bharu", store_postcode: 12345, store_state: "kelantan", store_phone: "012345678")
+      attributes_for(:store, store_name: "test store", store_address: "kota bharu", store_postcode: 12345, store_state: "kelantan", store_phone: "012345678")
     }
 
     context "with valid params" do
